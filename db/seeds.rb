@@ -1,0 +1,30 @@
+#=> User(id: integer, mail: string, password: string, created_at: datetime, updated_at: datetime)
+user1 = User.create(mail: "mail@hotmail.com", password: "password")
+
+#=> Deck(id: integer, name: string, score: integer, created_at: datetime, updated_at: datetime)
+mat =  Deck.create(name: "Mate")
+esp =  Deck.create(name: "Español")
+gen =  Deck.create(name: "Cultura General")
+#=> UserDeck(id: integer, user_id: integer, deck_id: integer, created_at: datetime, updated_at: datetime)
+#Esto no es necesario crearlos, se construyen al hacer la asociacion en el Ite, esto es: "Item.create(deck_id: mat.id"
+user_deck1 = UserDeck.create(user_id: user1.id, deck_id: mat.id)
+
+#=> Item(id: integer, question: string, answer: string, created_at: datetime, updated_at: datetime)
+Item.create(deck_id: mat.id, question: "¿En cuantos estados pueden aparecer los elementos?", answer: "4")
+Item.create(deck_id: mat.id, question: "¿Cuál es el primero de la lista de los números primos?", answer: "2")
+Item.create(deck_id: mat.id, question: "¿Cuántas vocales hay en triptongo?", answer: "3")
+
+Item.create(deck_id: esp.id, question: "¿Cómo se llama a la representación de una palabra por medio de una o varias de sus letras?", answer:	"Abreviatura")
+Item.create(deck_id: esp.id, question: "¿Quién 'sabía que no sabía nada'?", answer:	"socrates")
+Item.create(deck_id: esp.id, question: "Antónimo de Oriental	?", answer:	"occidental")
+Item.create(deck_id: esp.id, question: "¿Cómo se llama a todos los países de América que hablan lenguas romance?	", answer:	"latinoamericanos")
+
+Item.create(deck_id: gen.id, question: "¿En qué lugar del cuerpo se produce la insulina?	", answer:	"pancreas")
+Item.create(deck_id: gen.id, question: "¿De qué estilo arquitectónico es la Catedral de Notre Dame en París?	", answer:	"gotico")
+Item.create(deck_id: gen.id, question: "¿A quién le dice la Reina Roja que tiene que correr lo más rápido que pueda para quedarse en el mismo sitio?	", answer:	"alicia")
+Item.create(deck_id: gen.id, question: "China es un régimen...		", answer:	"Comunista")
+Item.create(deck_id: gen.id, question: "¿Cómo se denomina la manifestación genetica visible de un organismo?	", answer:	"fenotipo")
+Item.create(deck_id: gen.id, question: "¿Cuál es el nombre correcto del ostión?	", answer:	"ostra")
+Item.create(deck_id: gen.id, question: "¿Cómo se llama a la autoridad que gobierna cada estado?	", answer:	"gobernador")
+Item.create(deck_id: gen.id, question: "Cómo se llama el pelo de las ovejas y carneros? ", answer:	"lana")
+Item.create(deck_id: gen.id, question: "¿Cómo se llama el armazón de los aviones? ", answer:	"	fuselaje")

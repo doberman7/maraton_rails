@@ -1,0 +1,12 @@
+<h1>Maraton welcome index</h1>
+
+<p>Hola <%= @user.mail if @user != nil%> </p>
+
+<!-- <p>Find me in app/views/welcome/index.html.erb</p> -->
+<p>Selecciona categoria</p>
+
+<!-- render :action doesn't run any code in the target action -->
+<!-- mostrar partial _deck -->
+<%= render "deck" %>
+<h2>Scores</h2>
+<p>Correctas en el ultimo juego <%= @scores if @scores != nil%> </p>
